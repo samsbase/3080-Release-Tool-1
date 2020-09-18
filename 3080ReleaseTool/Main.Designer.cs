@@ -372,7 +372,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(590, 40);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Cart Alert checks the RTX 3080 Webpage for the \'Add to Cart\' button every 30 \r\nse" +
+            this.label5.Text = "Cart Alert checks the RTX 3080 Webpage for the \'Add to Cart\' button every 10 \r\nse" +
     "conds. When the button is found an alert will play and the check will stop looki" +
     "ng.\r\n";
             // 

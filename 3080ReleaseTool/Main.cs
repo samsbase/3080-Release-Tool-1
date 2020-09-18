@@ -86,6 +86,7 @@ namespace _3080ReleaseTool
 
             if (cartAlert.checkForCartButton(region))
             {
+                Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://www.nvidia.com/en-gb/geforce/graphics-cards/30-series/rtx-3080/");
                 tmrCartAlert.Stop();
                 cbCartChecker.Checked = false;
                 lbCartLog.Items.Add("[" + library.getCurrentTime() + "] " + "Cart Button Found!");
@@ -165,7 +166,7 @@ namespace _3080ReleaseTool
 
         private void checkAlerts()
         {
-            var soundPlayer = new SoundPlayer(@"c:\Windows\Media\notify.wav");
+            var soundPlayer = new SoundPlayer(@"c:\Windows\Media\Alarm05.wav");
 
             if (cbAlertUk.Checked)
             {
