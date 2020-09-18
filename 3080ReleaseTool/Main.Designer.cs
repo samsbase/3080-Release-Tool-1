@@ -1,11 +1,13 @@
-﻿namespace _3080ReleaseTool
+﻿using System.Windows.Forms;
+using System.ComponentModel;
+namespace _3080ReleaseTool
 {
     partial class Main
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -36,15 +38,16 @@
             this.tmrAutoRefresh = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtQtyUs = new System.Windows.Forms.TextBox();
+            this.txtQtyUk = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lbLogs = new System.Windows.Forms.ListBox();
-            this.txtQtyUk = new System.Windows.Forms.TextBox();
-            this.txtQtyUs = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.browser = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -63,8 +66,8 @@
             // 
             // btnManualUpdate
             // 
-            this.btnManualUpdate.Location = new System.Drawing.Point(11, 213);
-            this.btnManualUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnManualUpdate.Location = new System.Drawing.Point(9, 274);
+            this.btnManualUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnManualUpdate.Name = "btnManualUpdate";
             this.btnManualUpdate.Size = new System.Drawing.Size(327, 26);
             this.btnManualUpdate.TabIndex = 2;
@@ -86,7 +89,7 @@
             // 
             this.cbAutoRefresh.AutoSize = true;
             this.cbAutoRefresh.Location = new System.Drawing.Point(11, 77);
-            this.cbAutoRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbAutoRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.cbAutoRefresh.Name = "cbAutoRefresh";
             this.cbAutoRefresh.Size = new System.Drawing.Size(132, 24);
             this.cbAutoRefresh.TabIndex = 5;
@@ -96,7 +99,7 @@
             // 
             // tmrAutoRefresh
             // 
-            this.tmrAutoRefresh.Interval = 30000;
+            this.tmrAutoRefresh.Interval = 5000;
             this.tmrAutoRefresh.Tick += new System.EventHandler(this.tmrAutoRefresh_Tick);
             // 
             // tabControl1
@@ -105,7 +108,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(9, 10);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(333, 199);
@@ -120,21 +123,47 @@
             this.tabPage1.Controls.Add(this.cbAutoRefresh);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(325, 166);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Stock Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(303, 40);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Checking this box will automatically check \r\nNvidia stock and update every 5 seco" +
+    "nds.";
+            // 
+            // txtQtyUs
+            // 
+            this.txtQtyUs.Enabled = false;
+            this.txtQtyUs.Location = new System.Drawing.Point(184, 39);
+            this.txtQtyUs.Name = "txtQtyUs";
+            this.txtQtyUs.Size = new System.Drawing.Size(136, 26);
+            this.txtQtyUs.TabIndex = 7;
+            // 
+            // txtQtyUk
+            // 
+            this.txtQtyUk.Enabled = false;
+            this.txtQtyUk.Location = new System.Drawing.Point(184, 7);
+            this.txtQtyUk.Name = "txtQtyUk";
+            this.txtQtyUk.Size = new System.Drawing.Size(136, 26);
+            this.txtQtyUk.TabIndex = 6;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.lbLogs);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(325, 166);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Logs";
@@ -149,32 +178,6 @@
             this.lbLogs.Size = new System.Drawing.Size(315, 144);
             this.lbLogs.TabIndex = 0;
             // 
-            // txtQtyUk
-            // 
-            this.txtQtyUk.Enabled = false;
-            this.txtQtyUk.Location = new System.Drawing.Point(184, 7);
-            this.txtQtyUk.Name = "txtQtyUk";
-            this.txtQtyUk.Size = new System.Drawing.Size(136, 26);
-            this.txtQtyUk.TabIndex = 6;
-            // 
-            // txtQtyUs
-            // 
-            this.txtQtyUs.Enabled = false;
-            this.txtQtyUs.Location = new System.Drawing.Point(184, 39);
-            this.txtQtyUs.Name = "txtQtyUs";
-            this.txtQtyUs.Size = new System.Drawing.Size(136, 26);
-            this.txtQtyUs.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(309, 40);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Checking this box will automatically check \r\nNvidia stock and update every 30 sec" +
-    "onds.";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label4);
@@ -186,6 +189,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "About";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(88, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Created by Nsomnic";
             // 
             // label3
             // 
@@ -199,21 +212,25 @@
     "the appropriate\r\nendpoint URLS\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // browser
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(88, 143);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Created by Nsomnic";
+            this.browser.BackColor = System.Drawing.Color.Red;
+            this.browser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browser.Location = new System.Drawing.Point(24, 215);
+            this.browser.Name = "browser";
+            this.browser.Size = new System.Drawing.Size(299, 54);
+            this.browser.TabIndex = 7;
+            this.browser.Text = "OPEN WEB BROWSER NOW";
+            this.browser.UseVisualStyleBackColor = false;
+            this.browser.Visible = false;
+            this.browser.Click += new System.EventHandler(this.button1_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 245);
+            this.ClientSize = new System.Drawing.Size(348, 311);
+            this.Controls.Add(this.browser);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnManualUpdate);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,22 +251,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUkQty;
-        private System.Windows.Forms.Button btnManualUpdate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox cbAutoRefresh;
-        private System.Windows.Forms.Timer tmrAutoRefresh;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox lbLogs;
-        private System.Windows.Forms.TextBox txtQtyUs;
-        private System.Windows.Forms.TextBox txtQtyUk;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label3;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label4;
+        private Label lblUkQty;
+        private Button btnManualUpdate;
+        private Label label1;
+        private CheckBox cbAutoRefresh;
+        private Timer tmrAutoRefresh;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private ListBox lbLogs;
+        private TextBox txtQtyUs;
+        private TextBox txtQtyUk;
+        private Label label2;
+        private TabPage tabPage3;
+        private Label label3;
+        private BackgroundWorker backgroundWorker1;
+        private Label label4;
+        public Button browser;
     }
 }
 

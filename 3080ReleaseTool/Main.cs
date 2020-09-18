@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace _3080ReleaseTool
 {
     public partial class Main : Form
     {
+        private int OldQuantUK = 5000000;
+        private int OldQuantUS = 5000000;
+
         public Main()
         {
             InitializeComponent();
@@ -27,7 +31,7 @@ namespace _3080ReleaseTool
 
         private void UpdateProductQty()
         {
-
+            
 
 
             RequestTool requestTool = new RequestTool();
@@ -37,6 +41,16 @@ namespace _3080ReleaseTool
 
             int ukQty = quantities.UK;
             int usQty = quantities.US;
+
+            if((ukQty > OldQuantUK) || (usQty > OldQuantUS))
+            {
+                this.browser.Visible = true;
+                Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://www.nvidia.com/en-gb/geforce/graphics-cards/30-series/rtx-3080/");
+            }
+
+            OldQuantUK = ukQty;
+            OldQuantUS = usQty;
+
 
             txtQtyUk.Text = ukQty.ToString();
             txtQtyUs.Text = usQty.ToString();
@@ -69,6 +83,11 @@ namespace _3080ReleaseTool
                 tmrAutoRefresh.Stop();
                 lbLogs.Items.Add("Auto Refresh Stopped");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://www.nvidia.com/en-gb/geforce/graphics-cards/30-series/rtx-3080/");
         }
     }
 }
