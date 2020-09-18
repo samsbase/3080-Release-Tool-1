@@ -1,13 +1,11 @@
-﻿using System.Windows.Forms;
-using System.ComponentModel;
-namespace _3080ReleaseTool
+﻿namespace _3080ReleaseTool
 {
     partial class Main
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -38,38 +36,68 @@ namespace _3080ReleaseTool
             this.tmrAutoRefresh = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtQtyUs = new System.Windows.Forms.TextBox();
-            this.txtQtyUk = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.lbLogs = new System.Windows.Forms.ListBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSaveLog = new System.Windows.Forms.LinkLabel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbAlertUk = new System.Windows.Forms.CheckBox();
+            this.numUkAlert = new System.Windows.Forms.NumericUpDown();
+            this.cbAlertUs = new System.Windows.Forms.CheckBox();
+            this.numUsAlert = new System.Windows.Forms.NumericUpDown();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtQtyUk = new System.Windows.Forms.TextBox();
+            this.txtQtyUs = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbCartLog = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbRegion = new System.Windows.Forms.ComboBox();
+            this.cbCartChecker = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.browser = new System.Windows.Forms.Button();
+            this.tmrCartAlert = new System.Windows.Forms.Timer(this.components);
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUkAlert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUsAlert)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUkQty
             // 
             this.lblUkQty.AutoSize = true;
-            this.lblUkQty.Location = new System.Drawing.Point(7, 10);
+            this.lblUkQty.Location = new System.Drawing.Point(7, 22);
             this.lblUkQty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUkQty.Name = "lblUkQty";
-            this.lblUkQty.Size = new System.Drawing.Size(175, 20);
+            this.lblUkQty.Size = new System.Drawing.Size(126, 20);
             this.lblUkQty.TabIndex = 0;
-            this.lblUkQty.Text = "Available Quantity (UK):";
+            this.lblUkQty.Text = "United Kingdom:";
             // 
             // btnManualUpdate
             // 
-            this.btnManualUpdate.Location = new System.Drawing.Point(9, 274);
+            this.btnManualUpdate.Location = new System.Drawing.Point(90, 70);
             this.btnManualUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnManualUpdate.Name = "btnManualUpdate";
-            this.btnManualUpdate.Size = new System.Drawing.Size(327, 26);
+            this.btnManualUpdate.Size = new System.Drawing.Size(228, 26);
             this.btnManualUpdate.TabIndex = 2;
             this.btnManualUpdate.Text = "Manual Update";
             this.btnManualUpdate.UseVisualStyleBackColor = true;
@@ -78,17 +106,17 @@ namespace _3080ReleaseTool
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 38);
+            this.label1.Location = new System.Drawing.Point(286, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 20);
+            this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Available Quantity (US):";
+            this.label1.Text = "United States:";
             // 
             // cbAutoRefresh
             // 
             this.cbAutoRefresh.AutoSize = true;
-            this.cbAutoRefresh.Location = new System.Drawing.Point(11, 77);
+            this.cbAutoRefresh.Location = new System.Drawing.Point(11, 24);
             this.cbAutoRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.cbAutoRefresh.Name = "cbAutoRefresh";
             this.cbAutoRefresh.Size = new System.Drawing.Size(132, 24);
@@ -99,102 +127,316 @@ namespace _3080ReleaseTool
             // 
             // tmrAutoRefresh
             // 
-            this.tmrAutoRefresh.Interval = 5000;
+            this.tmrAutoRefresh.Interval = 10000;
             this.tmrAutoRefresh.Tick += new System.EventHandler(this.tmrAutoRefresh_Tick);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(9, 10);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(333, 199);
+            this.tabControl1.Size = new System.Drawing.Size(619, 443);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.txtQtyUs);
-            this.tabPage1.Controls.Add(this.txtQtyUk);
-            this.tabPage1.Controls.Add(this.lblUkQty);
-            this.tabPage1.Controls.Add(this.cbAutoRefresh);
-            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.groupBox8);
+            this.tabPage1.Controls.Add(this.groupBox7);
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(325, 166);
+            this.tabPage1.Size = new System.Drawing.Size(611, 410);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Stock Info";
+            this.tabPage1.Text = "Nvidia Inventory";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // groupBox8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(303, 40);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Checking this box will automatically check \r\nNvidia stock and update every 5 seco" +
-    "nds.";
-            // 
-            // txtQtyUs
-            // 
-            this.txtQtyUs.Enabled = false;
-            this.txtQtyUs.Location = new System.Drawing.Point(184, 39);
-            this.txtQtyUs.Name = "txtQtyUs";
-            this.txtQtyUs.Size = new System.Drawing.Size(136, 26);
-            this.txtQtyUs.TabIndex = 7;
-            // 
-            // txtQtyUk
-            // 
-            this.txtQtyUk.Enabled = false;
-            this.txtQtyUk.Location = new System.Drawing.Point(184, 7);
-            this.txtQtyUk.Name = "txtQtyUk";
-            this.txtQtyUk.Size = new System.Drawing.Size(136, 26);
-            this.txtQtyUk.TabIndex = 6;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.lbLogs);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(325, 166);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Logs";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.groupBox8.Controls.Add(this.lbLogs);
+            this.groupBox8.Location = new System.Drawing.Point(11, 273);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(591, 132);
+            this.groupBox8.TabIndex = 18;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Inventory Logs";
             // 
             // lbLogs
             // 
             this.lbLogs.FormattingEnabled = true;
             this.lbLogs.ItemHeight = 20;
-            this.lbLogs.Location = new System.Drawing.Point(5, 7);
+            this.lbLogs.Location = new System.Drawing.Point(9, 25);
             this.lbLogs.Name = "lbLogs";
-            this.lbLogs.Size = new System.Drawing.Size(315, 144);
-            this.lbLogs.TabIndex = 0;
+            this.lbLogs.Size = new System.Drawing.Size(576, 104);
+            this.lbLogs.TabIndex = 13;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Location = new System.Drawing.Point(11, 187);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(591, 80);
+            this.groupBox7.TabIndex = 17;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "About";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(579, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "This tool automatically retrieves inventory data from Nvidia\'s Digitalriver endpo" +
+    "ints.";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.btnManualUpdate);
+            this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Controls.Add(this.lblSaveLog);
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.cbAutoRefresh);
+            this.groupBox5.Location = new System.Drawing.Point(11, 75);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(591, 105);
+            this.groupBox5.TabIndex = 16;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Configuration";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(246, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Auto-Refresh must be toggled for alerting to unlock";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(148, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "(Every 10 Seconds)";
+            // 
+            // lblSaveLog
+            // 
+            this.lblSaveLog.AutoSize = true;
+            this.lblSaveLog.Location = new System.Drawing.Point(5, 73);
+            this.lblSaveLog.Name = "lblSaveLog";
+            this.lblSaveLog.Size = new System.Drawing.Size(80, 20);
+            this.lblSaveLog.TabIndex = 14;
+            this.lblSaveLog.TabStop = true;
+            this.lblSaveLog.Text = "Save Log ";
+            this.lblSaveLog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSaveLog_LinkClicked);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.cbAlertUk);
+            this.groupBox6.Controls.Add(this.numUkAlert);
+            this.groupBox6.Controls.Add(this.cbAlertUs);
+            this.groupBox6.Controls.Add(this.numUsAlert);
+            this.groupBox6.Location = new System.Drawing.Point(347, 9);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(238, 87);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Alerting";
+            // 
+            // cbAlertUk
+            // 
+            this.cbAlertUk.AutoSize = true;
+            this.cbAlertUk.Enabled = false;
+            this.cbAlertUk.Location = new System.Drawing.Point(15, 25);
+            this.cbAlertUk.Name = "cbAlertUk";
+            this.cbAlertUk.Size = new System.Drawing.Size(50, 24);
+            this.cbAlertUk.TabIndex = 9;
+            this.cbAlertUk.Text = "UK";
+            this.cbAlertUk.UseVisualStyleBackColor = true;
+            this.cbAlertUk.CheckedChanged += new System.EventHandler(this.cbAlertUk_CheckedChanged);
+            // 
+            // numUkAlert
+            // 
+            this.numUkAlert.Enabled = false;
+            this.numUkAlert.Location = new System.Drawing.Point(91, 23);
+            this.numUkAlert.Name = "numUkAlert";
+            this.numUkAlert.Size = new System.Drawing.Size(135, 26);
+            this.numUkAlert.TabIndex = 11;
+            // 
+            // cbAlertUs
+            // 
+            this.cbAlertUs.AutoSize = true;
+            this.cbAlertUs.Enabled = false;
+            this.cbAlertUs.Location = new System.Drawing.Point(15, 55);
+            this.cbAlertUs.Name = "cbAlertUs";
+            this.cbAlertUs.Size = new System.Drawing.Size(51, 24);
+            this.cbAlertUs.TabIndex = 10;
+            this.cbAlertUs.Text = "US";
+            this.cbAlertUs.UseVisualStyleBackColor = true;
+            this.cbAlertUs.CheckedChanged += new System.EventHandler(this.cbAlertUs_CheckedChanged);
+            // 
+            // numUsAlert
+            // 
+            this.numUsAlert.Enabled = false;
+            this.numUsAlert.Location = new System.Drawing.Point(91, 54);
+            this.numUsAlert.Name = "numUsAlert";
+            this.numUsAlert.Size = new System.Drawing.Size(134, 26);
+            this.numUsAlert.TabIndex = 12;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lblUkQty);
+            this.groupBox4.Controls.Add(this.txtQtyUk);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.txtQtyUs);
+            this.groupBox4.Location = new System.Drawing.Point(11, 5);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(591, 64);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Stock Levels";
+            // 
+            // txtQtyUk
+            // 
+            this.txtQtyUk.Enabled = false;
+            this.txtQtyUk.Location = new System.Drawing.Point(133, 19);
+            this.txtQtyUk.Name = "txtQtyUk";
+            this.txtQtyUk.Size = new System.Drawing.Size(149, 26);
+            this.txtQtyUk.TabIndex = 6;
+            // 
+            // txtQtyUs
+            // 
+            this.txtQtyUs.Enabled = false;
+            this.txtQtyUs.Location = new System.Drawing.Point(399, 19);
+            this.txtQtyUs.Name = "txtQtyUs";
+            this.txtQtyUs.Size = new System.Drawing.Size(189, 26);
+            this.txtQtyUs.TabIndex = 7;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Controls.Add(this.groupBox1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(611, 410);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Cart Alert";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lbCartLog);
+            this.groupBox3.Location = new System.Drawing.Point(6, 218);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(596, 186);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cart Alert Logs";
+            // 
+            // lbCartLog
+            // 
+            this.lbCartLog.FormattingEnabled = true;
+            this.lbCartLog.ItemHeight = 20;
+            this.lbCartLog.Location = new System.Drawing.Point(10, 25);
+            this.lbCartLog.Name = "lbCartLog";
+            this.lbCartLog.Size = new System.Drawing.Size(580, 144);
+            this.lbCartLog.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(6, 112);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(599, 100);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "About";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(590, 40);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Cart Alert checks the RTX 3080 Webpage for the \'Add to Cart\' button every 30 \r\nse" +
+    "conds. When the button is found an alert will play and the check will stop looki" +
+    "ng.\r\n";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbRegion);
+            this.groupBox1.Controls.Add(this.cbCartChecker);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(599, 100);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Configuration";
+            // 
+            // cbRegion
+            // 
+            this.cbRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRegion.FormattingEnabled = true;
+            this.cbRegion.Items.AddRange(new object[] {
+            "UK"});
+            this.cbRegion.Location = new System.Drawing.Point(15, 40);
+            this.cbRegion.Name = "cbRegion";
+            this.cbRegion.Size = new System.Drawing.Size(238, 28);
+            this.cbRegion.TabIndex = 3;
+            // 
+            // cbCartChecker
+            // 
+            this.cbCartChecker.AutoSize = true;
+            this.cbCartChecker.Location = new System.Drawing.Point(268, 42);
+            this.cbCartChecker.Name = "cbCartChecker";
+            this.cbCartChecker.Size = new System.Drawing.Size(184, 24);
+            this.cbCartChecker.TabIndex = 1;
+            this.cbCartChecker.Text = "Check for \'Add to cart\'";
+            this.cbCartChecker.UseVisualStyleBackColor = true;
+            this.cbCartChecker.CheckedChanged += new System.EventHandler(this.cbCartChecker_CheckedChanged);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(325, 166);
+            this.tabPage3.Size = new System.Drawing.Size(611, 410);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "About";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(568, 387);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "v1.2";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(88, 143);
+            this.label4.Location = new System.Drawing.Point(6, 387);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 20);
             this.label4.TabIndex = 1;
@@ -203,46 +445,56 @@ namespace _3080ReleaseTool
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 13);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(59, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(293, 48);
+            this.label3.Size = new System.Drawing.Size(494, 40);
             this.label3.TabIndex = 0;
-            this.label3.Text = "A Simplistic tool to query Nvidia RTX 3080 Stock\r\nLevels by sending a request to " +
-    "the appropriate\r\nendpoint URLS\r\n";
+            this.label3.Text = "A Simplistic tool to query Nvidia RTX 3080 Stock Levels by sending a \r\nrequest to" +
+    " the appropriate endpoint URLS\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // browser
+            // tmrCartAlert
             // 
-            this.browser.BackColor = System.Drawing.Color.Red;
-            this.browser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.browser.Location = new System.Drawing.Point(24, 215);
-            this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(299, 54);
-            this.browser.TabIndex = 7;
-            this.browser.Text = "OPEN WEB BROWSER NOW";
-            this.browser.UseVisualStyleBackColor = false;
-            this.browser.Visible = false;
-            this.browser.Click += new System.EventHandler(this.button1_Click);
+            this.tmrCartAlert.Interval = 10000;
+            this.tmrCartAlert.Tick += new System.EventHandler(this.tmrCartAlert_Tick);
+            // 
+            // saveFile
+            // 
+            this.saveFile.DefaultExt = "txt";
+            this.saveFile.Title = "Save Log";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 311);
-            this.Controls.Add(this.browser);
+            this.ClientSize = new System.Drawing.Size(631, 464);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnManualUpdate);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Main";
             this.Text = "3030 Release Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUkAlert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUsAlert)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
@@ -251,23 +503,43 @@ namespace _3080ReleaseTool
 
         #endregion
 
-        private Label lblUkQty;
-        private Button btnManualUpdate;
-        private Label label1;
-        private CheckBox cbAutoRefresh;
-        private Timer tmrAutoRefresh;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private ListBox lbLogs;
-        private TextBox txtQtyUs;
-        private TextBox txtQtyUk;
-        private Label label2;
-        private TabPage tabPage3;
-        private Label label3;
-        private BackgroundWorker backgroundWorker1;
-        private Label label4;
-        public Button browser;
+        private System.Windows.Forms.Label lblUkQty;
+        private System.Windows.Forms.Button btnManualUpdate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbAutoRefresh;
+        private System.Windows.Forms.Timer tmrAutoRefresh;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TextBox txtQtyUs;
+        private System.Windows.Forms.TextBox txtQtyUk;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox cbAlertUs;
+        private System.Windows.Forms.CheckBox cbAlertUk;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.CheckBox cbCartChecker;
+        private System.Windows.Forms.ListBox lbCartLog;
+        private System.Windows.Forms.Timer tmrCartAlert;
+        private System.Windows.Forms.NumericUpDown numUsAlert;
+        private System.Windows.Forms.NumericUpDown numUkAlert;
+        private System.Windows.Forms.LinkLabel lblSaveLog;
+        private System.Windows.Forms.ListBox lbLogs;
+        private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbRegion;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
     }
 }
 
