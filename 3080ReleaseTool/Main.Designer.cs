@@ -127,7 +127,7 @@
             // 
             // tmrAutoRefresh
             // 
-            this.tmrAutoRefresh.Interval = 10000;
+            this.tmrAutoRefresh.Interval = 60000;
             this.tmrAutoRefresh.Tick += new System.EventHandler(this.tmrAutoRefresh_Tick);
             // 
             // tabControl1
@@ -228,7 +228,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 20);
             this.label2.TabIndex = 15;
-            this.label2.Text = "(Every 10 Seconds)";
+            this.label2.Text = "(Every 60 Seconds)";
             // 
             // lblSaveLog
             // 
@@ -372,7 +372,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(590, 40);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Cart Alert checks the RTX 3080 Webpage for the \'Add to Cart\' button every 10 \r\nse" +
+            this.label5.Text = "Cart Alert checks the RTX 3080 Webpage for the \'Add to Cart\' button every 20 \r\nse" +
     "conds. When the button is found an alert will play and the check will stop looki" +
     "ng.\r\n";
             // 
@@ -456,7 +456,7 @@
             // 
             // tmrCartAlert
             // 
-            this.tmrCartAlert.Interval = 10000;
+            this.tmrCartAlert.Interval = 20000;
             this.tmrCartAlert.Tick += new System.EventHandler(this.tmrCartAlert_Tick);
             // 
             // saveFile
@@ -474,7 +474,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Main";
-            this.Text = "3030 Release Tool";
+            this.Text = "3080 Release Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
