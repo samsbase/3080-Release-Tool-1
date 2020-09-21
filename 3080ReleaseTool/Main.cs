@@ -86,7 +86,7 @@ namespace _3080ReleaseTool
 
             if (cartAlert.checkForCartButton(region))
             {
-                Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://www.nvidia.com/en-gb/geforce/graphics-cards/30-series/rtx-3080/");
+                Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://store.nvidia.com/store/nvidia/en_US/buy/productID.5438481700/clearCart.yes/nextPage.QuickBuyCartPage");
                 tmrCartAlert.Stop();
                 cbCartChecker.Checked = false;
                 lbCartLog.Items.Add("[" + library.getCurrentTime() + "] " + "Cart Button Found!");
@@ -174,7 +174,7 @@ namespace _3080ReleaseTool
                 {
                     cbAlertUk.Checked = false;
                     soundPlayer.Play();
-                    Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://www.nvidia.com/en-gb/geforce/graphics-cards/30-series/rtx-3080/");
+                    Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://store.nvidia.com/store/nvidia/en_US/buy/productID.5438481700/clearCart.yes/nextPage.QuickBuyCartPage");
                 }
             }
 
