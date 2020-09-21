@@ -17,31 +17,16 @@ namespace _3080ReleaseTool
 
         public Boolean checkForCartButton(string region)
         {
-            if(region == "UK")
+            try
             {
+                if (region != "UK")
+                {
+                    throw new Exception("Region is incorrect");
+                }
                 string responseString = getWebsiteData(ukUrl);
-
-                if(responseString != "ERROR")
-                {
-                    if(responseString.Contains("Out Of Stock"))
-                    {
-                        return false;
-                    }
-                    else if(responseString.Contains("ADD TO CART") || responseString.Contains("Add To Cart") || responseString.Contains("Add to Cart"))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
+                return responseString.IndexOf("add to cart", StringComparison.InvariantCultureIgnoreCase) >= 0;
             }
-            else
+            catch
             {
                 MessageBox.Show("Region Invalid");
                 return false;
@@ -66,5 +51,4 @@ namespace _3080ReleaseTool
             }
         }
     }
-
 }
