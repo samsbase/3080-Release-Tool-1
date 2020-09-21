@@ -36,11 +36,18 @@ namespace _3080ReleaseTool
             {
                 
                 WebClient wc = new WebClient();
-                string json = wc.DownloadString(url);
-                var response = JsonConvert.DeserializeObject<Response>(json);
-                Quantity = response.product.availableQuantity;
+                try
+                {
+                    string json = wc.DownloadString(url);
+                    var response = JsonConvert.DeserializeObject<Response>(json);
+                    Quantity = response.product.availableQuantity;
 
-                return Quantity;
+                    return Quantity;
+                }
+                catch
+                {
+                    return Quantity = 0;
+                }
             }
             else
             {
